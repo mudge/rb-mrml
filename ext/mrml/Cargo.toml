@@ -1,0 +1,15 @@
+[package]
+name = "mrml"
+version = "0.1.0"
+edition = "2021"
+authors = ["Paul Mucur <mudge@mudge.name>"]
+license = "BSD-3-Clause"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+magnus = { version = "0.7" }
+mrml = { version = "4.0" }
+serde = { version = "1.0", features = ["derive"] }

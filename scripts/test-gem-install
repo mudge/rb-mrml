@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+set -eu
+
+rubygems=${1:-default}
+shift
+
+if [ "$rubygems" != "default" ]
+then
+  gem update --system "$rubygems"
+fi
+
+gem install --no-document pkg/*.gem
+bundle install
+rm -rf lib
+ruby test/test_mrml.rb
